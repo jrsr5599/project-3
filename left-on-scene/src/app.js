@@ -4,7 +4,9 @@ import LeftonScene from './components/LeftonScene';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
-
+  const getMovieRequest = async () => {
+  const url = ' ';
+  
   const response = await fetch(url);
   const reponseJson = await response.json();
 
