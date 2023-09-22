@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './app.css';
 import LeftonScene from './components/LeftonScene';
+import MovieList from '.components/MovieList';
+import SearchBox from '/components/SearchBox';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -22,6 +24,8 @@ useEffect(() => {
 
   return (
     <div className="LeftonScene">
+      <MovieList heading = 'Movies' />
+      <SearchBox searchValue = {searchValue} setSearchValue = {setSearchValue} />
       <LeftonScene/>
     </div>
   );
