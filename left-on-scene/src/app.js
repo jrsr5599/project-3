@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './app.css';
 import LeftonScene from './components/LeftonScene';
 import MovieList from '.components/MovieList';
-import SearchBox from '/components/SearchBox';
+import MovieSearch from '/components/MovieSearch';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
