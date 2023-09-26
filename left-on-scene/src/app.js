@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import './app.css';
 import MovieList from './components/MovieList';
 import MovieListHeading from './components/MovieListHeading';
 import SearchBox from './components/SearchBox';
@@ -10,7 +10,7 @@ import RemoveFavorites from './components/RemoveFavorites';
 const App = () => {
 	const [movies, setMovies] = useState([]);
 	const [searchValue, setSearchValue] = useState('');
-	const [favourites, setFavourites] = useState([]);
+	const [favorites, setFavorites] = useState([]);
 
 	const getMovieRequest = async (searchValue) => {
 		const url = ` `; // need to add url
@@ -24,8 +24,8 @@ const App = () => {
 	};
 
 	const addFavoriteMovie = (movie) => {
-		const newFavoriteList = [...favourites, movie];
-		setFavourites(newFavoriteList);
+		const newFavoriteList = [...favorites, movie];
+		setFavorites(newFavoriteList);
 	};
 
 	const removeFavoriteMovie = (movie) => {
@@ -33,7 +33,7 @@ const App = () => {
 			(favorite) => favorite.imdbID !== movie.imdbID
 		);
 
-		setFavourites(newFavouriteList);
+		setFavorites(newFavoriteList);
 	};
 
 	useEffect(() => {
@@ -58,7 +58,7 @@ const App = () => {
 			</div>
 			<div className='row'>
 				<MovieList
-					movies={favourites}
+					movies={favorites}
 					handleFavoritesClick={removeFavoriteMovie}
 					favoriteComponent={RemoveFavorites}
 				/>
