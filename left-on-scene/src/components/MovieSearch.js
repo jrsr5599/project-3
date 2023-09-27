@@ -96,7 +96,7 @@ useEffect(() => {
 return (
   <div className='container-fluid movie-app'>
     <div className='row d-flex align-items-center mt-4 mb-4'>
-      <MovieListHeading heading='Movies' />
+      <MovieListHeading heading='Movie List' />
       <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
     </div>
     <div className='row'>
@@ -107,7 +107,7 @@ return (
       />
     </div>
     <div className='row d-flex align-items-center mt-4 mb-4'>
-      <MovieListHeading heading='Favourites' />
+      <MovieListHeading heading='Favorites' />
     </div>
     <div className='row'>
       <MovieList

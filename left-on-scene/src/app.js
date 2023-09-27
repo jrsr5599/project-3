@@ -9,15 +9,17 @@ import AddFavorites from './components/AddFavorites';
 import RemoveFavorites from './components/RemoveFavorites';
 import NavBar from './components/NavBar';
 // import 'dotenv/config'
-console.log (process.env.SECRET_KEY)
+// console.log (process.env.SECRET_KEY)
 // const key 
 
 
 const App = () => {
 	return (
 <div>
+<NavBar/>
 	<MovieSearch/>
-	<NavBar/>
+
+	<AddFavorites/>
 	</div>
 	)};
 

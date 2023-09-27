@@ -33,3 +33,8 @@ body {
 	padding: 20px;
 	text-align: center;
 }
+
+.navbar {
+	padding-left: 10% !important;
+	padding-right: 10% !important;;
+}
