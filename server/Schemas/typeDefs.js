@@ -74,7 +74,7 @@ const typeDefs = gql`
     removeMovie(movieId: ID!): Users
     addReview(newReview: AddReview!): Users
     removeReview(reviewId: ID!): Users
-    addComment(newComment: AddComment): Users
+    addComment(newComment: AddComment!): Users
     removeComment(commentId: ID!): Users
   }
 `;
