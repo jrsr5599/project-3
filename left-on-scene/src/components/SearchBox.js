@@ -1,15 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const SearchBox = (props) => {
+const SearchBox = ({ getMovieRequest }) => {
+	const [searchQuery, setSearchQuery] = useState('');
+  
+	const handleSearch = () => {
+	  getMovieRequest(searchQuery);
+	};
 	return (
-		<div className='col col-sm-4'>
-			<input
-				className='form-control'
-				value={props.value}
-				onChange={(event) => props.setSearchValue(event.target.value)}
-				placeholder='Type to search...'
-			></input>
-		</div>
+		// <div className='col col-sm-4'>
+		// 	<input
+		// 		className='form-control'
+		// 		value={props.value}
+		// 		onChange={(event) => props.setSearchValue(event.target.value)}
+		// 		placeholder='Search for a Movie'
+		// 	></input> <button type='button' className='btn btn-primary'>Search</button>
+		// </div>
+		<div className="col col-sm-4">
+		<input
+		className='form-control'
+		  type="text"
+		  value={searchQuery}
+		  onChange={(e) => setSearchQuery(e.target.value)}
+		  placeholder="Search for a movie..."
+		/>
+		<button type='button' className='btn btn-primary'onClick={handleSearch}>Search</button>
+	  </div>
+	
 	);
 };
 

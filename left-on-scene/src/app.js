@@ -19,7 +19,7 @@ const App = () => {
 		<Router>
 <div>
 <NavBar/>
-	<MovieSearch/>
+
 
 			  <Routes>
 
@@ -29,7 +29,7 @@ const App = () => {
 				 </Route> 
 
 			  </Routes>
-
+			  <MovieSearch/>
 		  </div>
 		</Router>
 	)};

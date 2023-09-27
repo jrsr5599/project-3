@@ -65,15 +65,16 @@ const key = '15a6559706f656f8eadc5e7642675b96'
 const MovieSearch = () => {
 
 const [movies, setMovies] = useState([]);
-const [searchValue, setSearchValue] = useState('');
+const [searchValue] = useState('');
 const [favorites, setFavorites] = useState([]);
 const getMovieRequest = async (searchValue) => {
-  const url = `https://api.themoviedb.org/3/search/movie?api_key=${key}&query=${searchValue}`; // need to add url
+  const url = `https://api.themoviedb.org/3/search/movie?api_key=${key}&query=${searchValue}`;
   const response = await fetch(url);
   const responseJson = await response.json();
   if (responseJson.Search) {
     setMovies(responseJson.Search);
   }
+
 };
 const addFavoriteMovie = (movie) => {
   const newFavoriteList = [...favorites, movie];
@@ -93,11 +94,11 @@ useEffect(() => {
 }, [searchValue]);
 
 return (
-  <div className='container-fluid movie-app'>
-     <div className='row d-flex align-items-center mt-4 mb-4'>
-       <MovieListHeading heading='Movie List' />
-       <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
-     </div>
+  <div className="container-fluid movie-app">
+  <div className="row d-flex align-items-center mt-4 mb-4">
+    <MovieListHeading heading="Movie List" />
+    <SearchBox getMovieRequest={getMovieRequest} />
+  </div>
      <div className='row'>
        <MovieList
         movies={movies}
