@@ -13,8 +13,8 @@ const Login = (props) => {
     <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"></input>
   </div>
   <div className="form-check">
-    <input type="checkbox" className="form-check-input" id="exampleCheck1"> </input>
-    <label className="form-check-label" for="exampleCheck1">Check me out</label>
+    <input type="checkbox" class="form-check-input" id="exampleCheck1"> </input>
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
   <button type="submit" className="btn btn-primary">Submit</button>
 </form>
