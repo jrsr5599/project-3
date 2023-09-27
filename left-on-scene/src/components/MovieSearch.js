@@ -4,7 +4,6 @@ import '../';
 import MovieList from '../components/MovieList';
 import MovieListHeading from '../components/MovieListHeading';
 import SearchBox from '../components/SearchBox';
-import AddFavorites from '../components/AddFavorites';
 import RemoveFavorites from '../components/RemoveFavorites';
 import axios from 'axios';
 
@@ -102,7 +101,7 @@ return (
      <div className='row'>
        <MovieList
         movies={movies}
-        favoriteComponent={AddFavorites}
+        // favoriteComponent={}
         handleFavoritesClick={addFavoriteMovie}
       />
     </div>
