@@ -51,6 +51,9 @@ const typeDefs = gql`
   }
 
   input AddReview {
+    rating: Int
+    movie: String
+    movieId: String
     title: String
     text: String
   }
@@ -64,7 +67,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     saveMovie(newMovie: SaveMovie!): Users
     removeMovie(movieId: ID!): Users
-    addReview(newReview: AddReview): Users
+    addReview(newReview: AddReview!): Users
     removeReview(reviewId: ID!): Users
     addComment(newComment: AddComment): Users
     removeComment(commentId: ID!): Users
