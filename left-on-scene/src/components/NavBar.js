@@ -1,5 +1,7 @@
 import React from 'react';
-import {Navbar} from react-bootstrap;
+import { Link } from 'react-router-dom';
+import Login from './login';
+
 
 function NavBar() {
   return (
@@ -21,22 +23,23 @@ function NavBar() {
     //     </li>
     //   </ul>
     // </nav>
-<nav className="navbar navbar-light bg-light"> 
-  <a className="navbar-brand" href="#">Left on Scene</a>
+<nav className="navbar navbar-light bg-light">
+  <span>Left on Scene</span>
 
          <span>
-           <a href="/">Home</a>
+           <Link to="/">Home</Link>
          </span>
          <span>
-           <a href="/about">My Movies</a>
+           <Link to="/about">My Movies</Link>
          </span>
          <span>
-           <a href="/contact">My Reviews</a>
+           <Link to="/contact">My Reviews</Link>
          </span>
          <span>
-           <a href="/contact">Donations</a>
-         </span>        <span>
-           <a href="/contact">Log In</a>
+           <Link to="/donations">Donations</Link>
+         </span>        
+         <span>
+           <Link to="/login">Log In</Link>
          </span>
 
 </nav>
