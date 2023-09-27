@@ -15,12 +15,31 @@ import NavBar from './components/NavBar';
 
 const App = () => {
 	return (
+		<Router>
 <div>
 <NavBar/>
 	<MovieSearch/>
 
 	<AddFavorites/>
-	</div>
+
+			  <Routes>
+				<Route 
+				  path="/" 
+				  element={<Home />} 
+				/>
+				<Route 
+				  path="/login" 
+				  element={<Login />} 
+				/>
+			
+				{/* <Route 
+				  path="*" 
+				  element={<NoMatch />} 
+				/> */}
+			  </Routes>
+
+		  </div>
+		</Router>
 	)};
 
 export default App;

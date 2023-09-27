@@ -1,4 +1,7 @@
 import React from 'react';
+import Link from 'link-react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 
 function NavBar() {
   return (
@@ -20,22 +23,23 @@ function NavBar() {
     //     </li>
     //   </ul>
     // </nav>
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">Left on Scene</a>
+<nav className="navbar navbar-light bg-light">
+  <span>Left on Scene</span>
 
          <span>
-           <a href="/">Home</a>
+           <Link to="/">Home</Link>
          </span>
          <span>
-           <a href="/about">My Movies</a>
+           <Link to="/about">My Movies</Link>
          </span>
          <span>
-           <a href="/contact">My Reviews</a>
+           <Link to="/contact">My Reviews</Link>
          </span>
          <span>
-           <a href="/contact">Donations</a>
-         </span>        <span>
-           <a href="/contact">Log In</a>
+           <Link to="/contact">Donations</Link>
+         </span>        
+         <span>
+           <Link to="/Login">Log In</Link>
          </span>
 
 </nav>
