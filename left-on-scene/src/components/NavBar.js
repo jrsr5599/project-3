@@ -1,6 +1,6 @@
 import React from 'react';
-import Link from 'link-react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Login from './login';
 
 
 function NavBar() {
@@ -36,10 +36,10 @@ function NavBar() {
            <Link to="/contact">My Reviews</Link>
          </span>
          <span>
-           <Link to="/contact">Donations</Link>
+           <Link to="/donations">Donations</Link>
          </span>        
          <span>
-           <Link to="/Login">Log In</Link>
+           <Link to="/login">Log In</Link>
          </span>
 
 </nav>
