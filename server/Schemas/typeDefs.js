@@ -37,8 +37,13 @@ const typeDefs = gql`
     text: String
   }
 
+  type Checkout {
+    session: ID
+  }
+
   type Query {
     me: Users
+    checkout(donationAmount: Float): Checkout
   }
 
   input SaveMovie {
