@@ -5,7 +5,6 @@ import './app.css';
 import MovieSearch from './components/MovieSearch'
 import MovieListHeading from './components/MovieListHeading';
 import SearchBox from './components/SearchBox';
-// import AddFavorites from './components/AddFavorites';
 // import RemoveFavorites from './components/RemoveFavorites';
 import NavBar from './components/NavBar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -21,8 +20,6 @@ const App = () => {
 <div>
 <NavBar/>
 	<MovieSearch/>
-
-	<AddFavorites/>
 
 			  <Routes>
 
