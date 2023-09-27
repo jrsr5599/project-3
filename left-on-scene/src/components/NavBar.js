@@ -1,4 +1,5 @@
 import React from 'react';
+import {Navbar} from react-bootstrap;
 
 function NavBar() {
   return (
@@ -20,8 +21,8 @@ function NavBar() {
     //     </li>
     //   </ul>
     // </nav>
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">Left on Scene</a>
+<nav className="navbar navbar-light bg-light"> 
+  <a className="navbar-brand" href="#">Left on Scene</a>
 
          <span>
            <a href="/">Home</a>
