@@ -183,7 +183,7 @@ const MovieSearch = () => {
       <div className='row'>
         <MovieList
           movies={favorites}
-          handleFavoritesClick={removeFavoriteMovie}
+          // handleFavoritesClick={removeFavoriteMovie}
           favoriteComponent={RemoveFavorites}
         />
       </div>

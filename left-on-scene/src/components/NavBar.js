@@ -24,9 +24,11 @@ function NavBar() {
     //   </ul>
     // </nav>
 <nav className="navbar navbar-light bg-dark">
-  {/* <span> <Link to="/"><img {process.env.PUBLIC_URL + '/imgs/smallLogo.png'} alt="Left On Scene" /></Link></span> */}
-    {/* need to fix the code above^ to put the logo in the navbar  */}
-    <span> <Link to="/">Left On Scene</Link></span>
+    <span> <Link to="/"><img
+        className="smallLogo"
+        src= './imgs/logosmall.png'
+        alt="Let on Scene"></img>
+      </Link></span>
          <span>
            <Link to="/Home">Home</Link>
          </span>
