@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import FadeIn from "react-fade-in";
 
 
-const Home = () => {
+const LeftonScene = () => {
   // const { loading, data } = useQuery(QUERY_MATCHUPS, {
   //   fetchPolicy: "no-cache"
   // });
@@ -59,4 +59,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default LeftonScene;
