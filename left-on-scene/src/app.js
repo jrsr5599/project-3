@@ -10,6 +10,7 @@ import NavBar from './components/NavBar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './components/login';
 import Home from './components/home';
+import Layout from './components/Layout';
 
 // import 'dotenv/config'
 // console.log (process.env.SECRET_KEY)
@@ -17,24 +18,16 @@ import Home from './components/home';
 
 
 const App = () => {
-	return (
-		<Router>
-<div>
-<NavBar/>
-
-
-			  <Routes>
-
-				<Route
-				  path="/Login" 
-				  element={<Login/>}> 
-				 </Route> 
-
-			  </Routes>
-
-			  <Home/>
-		  </div>
-		</Router>
-	)};
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/Login" element={<Login />}/>
+        </Route>
+      </Routes>
+    </Router>
+  );
+};
 
 export default App;
