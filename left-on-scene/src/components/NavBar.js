@@ -23,7 +23,7 @@ function NavBar() {
     //     </li>
     //   </ul>
     // </nav>
-<nav className="navbar navbar-light bg-light">
+<nav className="navbar navbar-light bg-dark">
   <span>Left on Scene</span>
 
          <span>

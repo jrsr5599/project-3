@@ -37,7 +37,8 @@ body {
 
 .navbar {
 	padding-left: 10% !important;
-	padding-right: 10% !important;;
+	padding-right: 10% !important;
+	color:white;
 }
 
 .logo {
@@ -51,3 +52,18 @@ body {
 	text-align: center;
 	color: white;
 }
+
+.form-group {
+	color: white !important; 
+}
+
+.textMute {
+	color: rgb(255, 0, 0);
+	opacity: 50%;
+}
+/* 
+.custom-form-control {
+	
+
+	width: 300px !important;
+} */

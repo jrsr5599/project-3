@@ -50,7 +50,7 @@ const Home = () => {
       />    </FadeIn>
 
 
-<FadeIn transitionDuration={10000}> <p className='hometext'>
+<FadeIn transitionDuration={20000} delay={75}> <p className='hometext'>
       Left on Scene is a user-friendly platform designed for movie enthusiasts. <br/>
       Discover and explore an extensive database of films across various genres.<br/> 
       Users can search for their favorite movies, read insightful reviews, and contribute their own critiques.
