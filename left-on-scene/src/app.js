@@ -9,6 +9,8 @@ import SearchBox from './components/SearchBox';
 import NavBar from './components/NavBar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './components/login';
+import Home from './components/home';
+
 // import 'dotenv/config'
 // console.log (process.env.SECRET_KEY)
 // const key 
@@ -29,7 +31,8 @@ const App = () => {
 				 </Route> 
 
 			  </Routes>
-			  <MovieSearch/>
+
+			  <Home/>
 		  </div>
 		</Router>
 	)};
