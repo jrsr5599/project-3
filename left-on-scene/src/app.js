@@ -9,8 +9,9 @@ import SearchBox from './components/SearchBox';
 import NavBar from './components/NavBar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './components/login';
-import Home from './components/home';
+import Home from './components/LeftonScene';
 import Layout from './components/Layout';
+import LeftonScene from './components/LeftonScene'
 
 // import 'dotenv/config'
 // console.log (process.env.SECRET_KEY)
@@ -22,8 +23,9 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Layout /> }>
-          <Route index element={<Home />} />
+          <Route index element={<LeftonScene />} />
           <Route path="/Login" element={<Login />}/>
+		  <Route path="/Home" element={<MovieSearch />}/>
         </Route>
       </Routes>
     </Router>

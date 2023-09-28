@@ -1,32 +1,25 @@
 import React, { useState } from 'react';
 
-const SearchBox = ({ getMovieRequest }) => {
+const SearchBox = ({ setSearchValue, getMovieRequest }) => {
 	const [searchQuery, setSearchQuery] = useState('');
   
 	const handleSearch = () => {
+	  setSearchValue(searchQuery);
 	  getMovieRequest(searchQuery);
 	};
+  
 	return (
-		// <div className='col col-sm-4'>
-		// 	<input
-		// 		className='form-control'
-		// 		value={props.value}
-		// 		onChange={(event) => props.setSearchValue(event.target.value)}
-		// 		placeholder='Search for a Movie'
-		// 	></input> <button type='button' className='btn btn-primary'>Search</button>
-		// </div>
-		<div className="col col-sm-4">
+	  <div className="col col-sm-4">
 		<input
-		className='form-control'
+		  className='form-control'
 		  type="text"
 		  value={searchQuery}
 		  onChange={(e) => setSearchQuery(e.target.value)}
 		  placeholder="Search for a movie..."
 		/>
-		<button type='button' className='btn btn-primary'onClick={handleSearch}>Search</button>
+		<button type='button' className='btn btn-primary' onClick={handleSearch}>Search</button>
 	  </div>
-	
 	);
-};
-
-export default SearchBox;
+  };
+  
+  export default SearchBox;
