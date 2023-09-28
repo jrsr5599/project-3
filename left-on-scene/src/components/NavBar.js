@@ -24,16 +24,16 @@ function NavBar() {
     //   </ul>
     // </nav>
 <nav className="navbar navbar-light bg-dark">
-  <span>Left on Scene</span>
+  <span> <Link to="/">Left On Scene</Link></span>
 
          <span>
-           <Link to="/">Home</Link>
+           <Link to="/Home">Home</Link>
          </span>
          <span>
-           <Link to="/about">My Movies</Link>
+           <Link to="/MyMovies">My Movies</Link>
          </span>
          <span>
-           <Link to="/contact">My Reviews</Link>
+           <Link to="/MyReviews">My Reviews</Link>
          </span>
          <span>
            <Link to="/donations">Donations</Link>
