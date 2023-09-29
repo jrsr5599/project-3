@@ -30,7 +30,7 @@ function NavBar() {
         alt="Let on Scene"></img>
       </Link></span>
          <span>
-           <Link to="/Home">Home</Link>
+           <Link to="/Home">Find Movies</Link>
          </span>
          <span>
            <Link to="/MyMovies">My Movies</Link>
