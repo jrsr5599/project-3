@@ -13,6 +13,7 @@ import Home from './components/LeftonScene';
 import Layout from './components/Layout';
 import LeftonScene from './components/LeftonScene';
 import SingleMovie from './components/SingleMovie';
+import DonationPage from './components/Donations';
 
 // import 'dotenv/config'
 // console.log (process.env.SECRET_KEY)
@@ -27,6 +28,8 @@ const App = () => {
           <Route path="/Login" element={<Login />} />
           <Route path="/Movie/:movieid" element={<SingleMovie />} />
           <Route path="/Home" element={<MovieSearch />} />
+          <Route path="/Donations" element={<DonationPage />} />
+
         </Route>
       </Routes>
     </Router>
