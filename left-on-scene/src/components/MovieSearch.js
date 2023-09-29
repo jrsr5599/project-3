@@ -124,7 +124,6 @@ import axios from 'axios';
 // export default MovieSearch;
 
 const key = '15a6559706f656f8eadc5e7642675b96';
-
 const MovieSearch = () => {
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState('');
@@ -132,30 +131,12 @@ const MovieSearch = () => {
 
   const getMovieRequest = async (searchValue) => {
     console.log('getMovieRequest called with searchValue:', searchValue); // Debugging log
-    // const url = `https://api.themoviedb.org/3/search/movie?query=${searchValue}&api_key=${key}`;
     const url = `https://api.themoviedb.org/3/search/movie?api_key=${key}&query=${searchValue}`;
     const response = await fetch(url);
     const responseJson = await response.json();
     console.log(response);
     return responseJson;
-    if (responseJson.Search) {
-      // setMovies(responseJson.Search);
-      console.log('Movies state:', responseJson.Search); // Debugging log
-    }
   };
-
-  // const addFavoriteMovie = (movie) => {
-  //   const newFavoriteList = [...favorites, movie];
-  //   setFavorites(newFavoriteList);
-  // };
-
-  // const removeFavoriteMovie = (movie) => {
-  //   const newFavoriteList = favorites.filter(
-  //     (favorite) => favorite.imdbID !== movie.imdbID
-  //   );
-  //   setFavorites(newFavoriteList);
-  // };
-
   useEffect(() => {
     console.log('useEffect called with searchValue:', searchValue); // Debugging log
     getMovieRequest(searchValue).then( result => setMovies(result.results));
@@ -163,7 +144,6 @@ const MovieSearch = () => {
   useEffect(() => {
     console.log("data", movies);
   },[movies]) // comment out 162-164
-
   return (
     <div className="container-fluid movie-app">
       <div className="row d-flex align-items-center mt-4 mb-4">
@@ -183,7 +163,6 @@ const MovieSearch = () => {
       <div className='row'>
         <MovieList
           movies={favorites}
-          // handleFavoritesClick={removeFavoriteMovie}
           favoriteComponent={RemoveFavorites}
         />
       </div>
