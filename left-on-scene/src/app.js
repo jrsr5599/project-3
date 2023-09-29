@@ -13,6 +13,7 @@ import Home from './components/LeftonScene';
 import Layout from './components/Layout';
 import LeftonScene from './components/LeftonScene';
 import SingleMovie from './components/SingleMovie';
+
 // import 'dotenv/config'
 // console.log (process.env.SECRET_KEY)
 // const key

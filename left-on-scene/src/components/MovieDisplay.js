@@ -3,7 +3,7 @@ import FadeIn from "react-fade-in/lib/FadeIn";
 
 const MovieDisplay = ( {movie} ) => {
     const moviePosterUrl = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
-    const movieDetailUrl = `https://www.themoviedb.org/movie/${movie.id}`;
+    // const movieDetailUrl = `https://www.themoviedb.org/movie/${movie.id}`;
     const containerStyle = {
         border: "1px solid #ccc",
         padding: "10px",
@@ -11,8 +11,8 @@ const MovieDisplay = ( {movie} ) => {
         display: "inline-block",
     };
     return <FadeIn delay={500} transitionDuration={800}>
-        <h1>{movie.title}</h1>
-        <img src={moviePosterUrl} alt={movie.title} />
+        <div style={containerStyle}><h1>{movie.title}</h1>
+        <img src={moviePosterUrl} alt={movie.title} /></div>
         {/* <div style={containerStyle}>
           <h1>
             <a href={movieDetailUrl} target="_blank" rel="noopener noreferrer">
