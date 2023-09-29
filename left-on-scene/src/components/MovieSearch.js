@@ -5,6 +5,7 @@ import MovieList from '../components/MovieList';
 import MovieListHeading from '../components/MovieListHeading';
 import SearchBox from '../components/SearchBox';
 import RemoveFavorites from '../components/RemoveFavorites';
+import MovieDisplay from '../components/MovieDisplay'
 import axios from 'axios';
 
 
@@ -122,7 +123,6 @@ import axios from 'axios';
 
 // export default MovieSearch;
 
-
 const key = '15a6559706f656f8eadc5e7642675b96';
 
 const MovieSearch = () => {
@@ -132,11 +132,14 @@ const MovieSearch = () => {
 
   const getMovieRequest = async (searchValue) => {
     console.log('getMovieRequest called with searchValue:', searchValue); // Debugging log
+    // const url = `https://api.themoviedb.org/3/search/movie?query=${searchValue}&api_key=${key}`;
     const url = `https://api.themoviedb.org/3/search/movie?api_key=${key}&query=${searchValue}`;
     const response = await fetch(url);
     const responseJson = await response.json();
+    console.log(response);
+    return responseJson;
     if (responseJson.Search) {
-      setMovies(responseJson.Search);
+      // setMovies(responseJson.Search);
       console.log('Movies state:', responseJson.Search); // Debugging log
     }
   };
@@ -155,30 +158,27 @@ const MovieSearch = () => {
 
   useEffect(() => {
     console.log('useEffect called with searchValue:', searchValue); // Debugging log
-    getMovieRequest(searchValue);
+    getMovieRequest(searchValue).then( result => setMovies(result.results));
   }, [searchValue]);
+  useEffect(() => {
+    console.log("data", movies);
+  },[movies]) // comment out 162-164
 
   return (
     <div className="container-fluid movie-app">
       <div className="row d-flex align-items-center mt-4 mb-4">
-        <MovieListHeading heading="Movie List" />
         <SearchBox setSearchValue={setSearchValue} getMovieRequest={getMovieRequest} />
       </div>
       <div className="row">
         <div className="col">
           <div className="search-results">
             {movies.map((movie) => (
-              <div key={movie.imdbID} className="search-result">
-                <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
-
-                <h3>{movie.title}</h3>
-              </div>
+              <MovieDisplay movie={movie}/>
             ))}
           </div>
         </div>
-      </div>
+      </div> 
       <div className='row d-flex align-items-center mt-4 mb-4'>
-        <MovieListHeading heading='Favorites' />
       </div>
       <div className='row'>
         <MovieList
