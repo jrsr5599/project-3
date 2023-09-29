@@ -81,4 +81,10 @@ body {
 	color:white;
 	text-align: center;
 	align-items: center ; 
+	
+	
+}
+
+.movieDetails {
+	list-style: none;
 }
