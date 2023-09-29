@@ -1,23 +1,53 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { ADD_USER } from "../utils/mutations";
+import { useMutation } from "@apollo/client";
+import Auth from "../utils/auth";
 
 const SignUp = ({ handleSignUp }) => {
   const [userData, setUserData] = useState({
-    username: '',
-    email: '',
-    password: ''
+    username: "",
+    email: "",
+    password: "",
   });
+
+  const [validate] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+
+  const [createUser] = useMutation(ADD_USER);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserData({
       ...userData,
-      [name]: value
+      [name]: value,
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    handleSignUp(userData);
+
+    const form = e.currentTarget;
+    if (form.checkValidity() === false) {
+      e.preventDefault();
+      e.preventPropagation();
+    }
+
+    try {
+      const { data } = await createUser({
+        variables: { ...userData },
+      });
+
+      Auth.login(data.addUser.token);
+    } catch (err) {
+      console.error(err);
+      setShowAlert(true);
+    }
+
+    setUserData({
+      username: "",
+      email: "",
+      password: "",
+    });
   };
 
   return (
@@ -58,7 +88,9 @@ const SignUp = ({ handleSignUp }) => {
           required
         />
       </div>
-      <button type="submit" className="btn btn-primary">Submit</button>
+      <button type="submit" className="btn btn-primary">
+        Submit
+      </button>
     </form>
   );
 };
