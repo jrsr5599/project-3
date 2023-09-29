@@ -7,7 +7,7 @@ import SearchBox from '../components/SearchBox';
 import RemoveFavorites from '../components/RemoveFavorites';
 import MovieDisplay from '../components/MovieDisplay'
 import axios from 'axios';
-
+import { Link } from 'react-router-dom';
 
 // const MovieSearch = () => {
 //   const [query, setQuery] = useState('');
@@ -134,6 +134,9 @@ const MovieSearch = () => {
     const url = `https://api.themoviedb.org/3/search/movie?api_key=${key}&query=${searchValue}`;
     const response = await fetch(url);
     const responseJson = await response.json();
+    
+    
+    
     console.log(response);
     return responseJson;
   };
@@ -153,7 +156,7 @@ const MovieSearch = () => {
         <div className="col">
           <div className="search-results">
             {movies.map((movie) => (
-              <MovieDisplay movie={movie}/>
+            <Link to={`/movie/${movie.id}`}>  <MovieDisplay movie={movie}/></Link>
             ))}
           </div>
         </div>

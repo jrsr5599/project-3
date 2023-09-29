@@ -12,6 +12,7 @@ import Login from './components/login';
 import Home from './components/LeftonScene';
 import Layout from './components/Layout';
 import LeftonScene from './components/LeftonScene'
+import singleMovie from './components/singleMovie';
 
 // import 'dotenv/config'
 // console.log (process.env.SECRET_KEY)
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/" element={<Layout /> }>
           <Route index element={<LeftonScene />} />
           <Route path="/Login" element={<Login />}/>
+          <Route path="/Movie/:movieid" element={<singleMovie/>} />
 		  <Route path="/Home" element={<MovieSearch />}/>
         </Route>
       </Routes>

@@ -57,6 +57,11 @@ body {
 	color: white !important; 
 }
 
+.form-control {
+	text-align: center;
+	align-items: center;
+}
+
 .textMute {
 	color: rgb(255, 0, 0);
 	opacity: 50%;
@@ -70,4 +75,10 @@ body {
 
 .smallLogo {
 	width: 200px;
+}
+
+.movie-app {
+	color:white;
+	text-align: center;
+	align-items: center;
 }
