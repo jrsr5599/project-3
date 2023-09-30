@@ -1,5 +1,6 @@
 import React, { useState } from 'react'; 
 import SignUp from './SignUp';
+import FadeIn from 'react-fade-in/lib/FadeIn';
 
 const Login = (props) => {
   const [showSignUp, setShowSignUp] = useState(false);
@@ -46,6 +47,7 @@ const Login = (props) => {
     //     </div>
     //   </div>
     // </div>
+    <FadeIn>
     <div className="container">
     <div className="row justify-content-center">
       <div className="col-md-6">
@@ -70,9 +72,12 @@ const Login = (props) => {
           Sign Up
         </button>
         {showSignUp && <SignUp handleSignUp={handleSignUp} />}
+        {showSignUp && <h1>test</h1>}
+
       </div>
     </div>
   </div>
+  </FadeIn>
   );
 };
 

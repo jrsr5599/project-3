@@ -26,7 +26,7 @@ function NavBar() {
 <nav className="navbar navbar-light bg-dark">
     <span> <Link to="/"><img
         className="smallLogo"
-        src= './imgs/logosmall.png'
+        src= '/imgs/logosmall.png'
         alt="Let on Scene"></img>
       </Link></span>
          <span>
@@ -44,8 +44,10 @@ function NavBar() {
          <span>
            <Link to="/login">Log In</Link>
          </span>
+         
 
 </nav>
+
   );
 }
 export default NavBar;
