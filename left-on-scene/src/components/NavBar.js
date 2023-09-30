@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Auth from '../utils/auth';
 // import smallLogo from './imgs/smallLogo.png';
 
 
@@ -42,7 +43,13 @@ function NavBar() {
            <Link to="/donations">Donations</Link>
          </span>        
          <span>
-           <Link to="/login">Log In</Link>
+           {Auth.loggedIn() ? (
+            <>
+            <Link onClick={Auth.logout}>Logout</Link>
+            </>
+           ) : (
+            <Link to="/login">Login/Sign up</Link>
+           )}
          </span>
          
 
