@@ -79,12 +79,50 @@ body {
 
 .movie-app {
 	color:white;
-	text-align: center;
-	align-items: center ; 
+	/* text-align: center;
+	align-items: center ;  */
 	
 	
 }
 
-.movieDetails {
-	list-style: none;
-}
+.center-container {
+	display: flex;
+	justify-content: space-between;
+  }
+  
+  .movie-details {
+	text-align: left;
+	border: 2px solid #ccc;
+	padding: 10px;
+	margin-right: 20px; /* Add margin to the right side */
+  }
+  
+  .movie-trailer {
+	display: inline-block;
+	vertical-align: top;
+	border: 2px solid #ccc;
+	padding: 10px;
+  }
+
+ /* .movie-trailer {
+	display: inline-block;
+	vertical-align: top;
+	border: 2px solid #ccc;
+	padding: 10px;
+	margin-left: 20px;
+	margin-top: 20px; 
+  }
+    */
+  /* .movie-trailer iframe {
+	width: 100%; /* Make the iframe fill the container */
+  
+  
+  .overview {
+	max-width: 500px;
+	margin: 0 auto; /* Center the overview within the available space */
+  }
+  
+
+  .embed-responsive {
+	margin-top: 200px; /* Adjust the margin-top as needed to lower the trailer */
+  }
