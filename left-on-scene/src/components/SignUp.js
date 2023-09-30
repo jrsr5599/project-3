@@ -3,16 +3,12 @@ import { ADD_USER } from "../utils/mutations";
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 
-const SignUp = ({ handleSignUp }) => {
+const SignUp = () => {
   const [userData, setUserData] = useState({
     username: "",
     email: "",
     password: "",
   });
-
-  const [validate] = useState(false);
-  const [showAlert, setShowAlert] = useState(false);
-
   const [createUser] = useMutation(ADD_USER);
 
   const handleChange = (e) => {
@@ -40,9 +36,8 @@ const SignUp = ({ handleSignUp }) => {
       Auth.login(data.addUser.token);
     } catch (err) {
       console.error(err);
-      setShowAlert(true);
     }
-
+    
     setUserData({
       username: "",
       email: "",
