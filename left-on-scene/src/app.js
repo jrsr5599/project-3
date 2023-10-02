@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './app.css';
 // import MovieList from './components/MovieList';
 import MovieSearch from './components/MovieSearch';
-import MovieListHeading from './components/MovieListHeading';
+import MovieListHeading from './components/ReviewForm';
 import SearchBox from './components/SearchBox';
 // import RemoveFavorites from './components/RemoveFavorites';
 import NavBar from './components/NavBar';
@@ -26,7 +26,6 @@ import {
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
-
 
 // Construct request middleware that will attach the JWT token to every request as an `authorization` header
 const authLink = setContext((_, { headers }) => {
@@ -54,18 +53,17 @@ const client = new ApolloClient({
 const App = () => {
   return (
     <ApolloProvider client={client}>
-    <Router>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<LeftonScene />} />
-          <Route path="/Login" element={<Login />} />
-          <Route path="/Movie/:movieid" element={<SingleMovie />} />
-          <Route path="/Home" element={<MovieSearch />} />
-          <Route path="/Donations" element={<DonationPage />} />
-
-        </Route>
-      </Routes>
-    </Router>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<LeftonScene />} />
+            <Route path="/Login" element={<Login />} />
+            <Route path="/Movie/:movieid" element={<SingleMovie />} />
+            <Route path="/Home" element={<MovieSearch />} />
+            <Route path="/Donations" element={<DonationPage />} />
+          </Route>
+        </Routes>
+      </Router>
     </ApolloProvider>
   );
 };
