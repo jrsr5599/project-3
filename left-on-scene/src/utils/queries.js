@@ -28,3 +28,13 @@ export const GET_ME = gql`
     }
   }
 `;
+
+
+export const GET_MOVIE_DETAILS = gql`
+  query getMovieDetails($movieId: ID!) {
+    getMovieDetails(movieId: $movieId) {
+      title
+      posterUrl
+    }
+  }
+`;
