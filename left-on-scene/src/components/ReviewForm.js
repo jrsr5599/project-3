@@ -3,28 +3,16 @@ import { useMutation } from '@apollo/client';
 import { ADD_REVIEW } from '../utils/mutations';
 
 const ReviewForm = ({ onSubmit }) => {
-  const [reviewText, setReviewText] = useState({text: ''});
+  const [reviewText, setReviewText] = useState({text: '', user: '', movie: '', movieId: '', title: ''});
   const [addReview] = useMutation(ADD_REVIEW
-  //   , {
-  //   // onCompleted: () => {
-  //   // // console.log('Review saved successfully!');
-  //   // // setReviewText('');
-  //   // },
-  //   onError: (error) => {
-  //   console.error('Error saving review:', error);
-  //   }
-  // }
+
   );
   const handleReviewInputChange = (e) => {
     const { name, value } = e.target;
     setReviewText({...reviewText, [name]: value,})
     setReviewText(e.target.value);
   };
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   // e.preventPropagation();
-  //   addReview({ variables: { text: reviewText}});
-  // };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,7 +24,8 @@ const ReviewForm = ({ onSubmit }) => {
     try {
       console.log("Review:", reviewText)
       await addReview({
-        variables: { newReview: {text: reviewText} },
+        variables: { newReview: {
+          text: reviewText} },
       });
     } catch (err) {
       console.error(err);
