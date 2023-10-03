@@ -29,7 +29,7 @@ const MovieSearch = () => {
   }, [searchValue]);
   useEffect(() => {
     console.log('data', movies);
-  }, [movies]); // comment out 162-164
+  }, [movies]); 
   return (
     <FadeIn>
       <div className="container-fluid movie-app">

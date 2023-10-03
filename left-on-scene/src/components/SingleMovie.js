@@ -5,6 +5,8 @@ import ReviewForm from "../components/ReviewForm";
 import { useMutation } from "@apollo/client";
 import { SAVE_MOVIE } from "../utils/mutations";
 import Auth from "../utils/auth";
+import Reviews from "../components/Reviews"
+
 
 const key = "15a6559706f656f8eadc5e7642675b96";
 const getMovieVideos = async (movieId) => {
@@ -77,7 +79,7 @@ const SingleMovie = () => {
       description: movie.overview,
       directors: movie.director,
       actors: movie.cast,
-      image: movie.poster_path,
+      image: `https://image.tmdb.org/t/p/w500/${movie.poster_path}`, 
     }
 
     setNewMovie(newMovie);
@@ -155,8 +157,12 @@ const SingleMovie = () => {
                   Add a Review
                 </button>
                 {showReviewField && (
-                  <ReviewForm onSubmit={handleReviewSubmit} />
-                )}
+  <ReviewForm
+    onSubmit={handleReviewSubmit}
+    movieId={movieid} 
+    movieTitle={movie.title} // Pass movie ID as prop
+  />
+)}
               </div>
             </div>
           </div>
