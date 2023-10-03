@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './app.css';
 // import MovieList from './components/MovieList';
 import MovieSearch from './components/MovieSearch';
+import MovieList from './components/MovieList';
+import MovieListHeading from './components/ReviewForm';
 import ReviewForm from './components/ReviewForm';
 import SearchBox from './components/SearchBox';
 // import RemoveFavorites from './components/RemoveFavorites';
@@ -61,6 +63,7 @@ const App = () => {
             <Route path="/Login" element={<Login />} />
             <Route path="/Movie/:movieid" element={<SingleMovie />} />
             <Route path="/Home" element={<MovieSearch />} />
+            <Route path='/MyMovies' element={<MovieList />} />
             <Route path="/Donations" element={<DonationPage />} />
             <Route path="MyReviews" element ={<Reviews />} />
           </Route>
