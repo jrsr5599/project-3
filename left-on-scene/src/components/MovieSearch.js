@@ -51,9 +51,6 @@ const MovieSearch = () => {
           </div>
         </div>
         <div className="row d-flex align-items-center mt-4 mb-4"></div>
-        <div className="row">
-          <MovieList movies={favorites} favoriteComponent={RemoveFavorites} />
-        </div>
       </div>
     </FadeIn>
   );
