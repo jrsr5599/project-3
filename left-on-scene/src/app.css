@@ -131,7 +131,20 @@ body {
   .background-container {
 	position: relative;
 	background-image: url('../public/imgs//Directors-Slat.png');
-	background-size: 15%; /* Adjust the size as needed */
+	background-size: 15%; 
 	background-position: bottom 50px right 100px;
 	background-repeat: no-repeat;
   }
+
+
+  .reviews-container {
+    background-image: url('../public/imgs/Light.png');
+	background-size: 15%; 
+
+	background-repeat: no-repeat;
+}
+
+
+
+
+

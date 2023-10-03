@@ -39,9 +39,9 @@ function NavBar() {
          <span>
            <Link to="/MyReviews">My Reviews</Link>
          </span>
-         <span>
+         {/* <span>
            <Link to="/donations">Donations</Link>
-         </span>        
+         </span>         */}
          <span>
            {Auth.loggedIn() ? (
             <>

@@ -5,6 +5,7 @@ import './app.css';
 import MovieSearch from './components/MovieSearch';
 import MovieList from './components/MovieList';
 import MovieListHeading from './components/ReviewForm';
+import ReviewForm from './components/ReviewForm';
 import SearchBox from './components/SearchBox';
 // import RemoveFavorites from './components/RemoveFavorites';
 import NavBar from './components/NavBar';
@@ -16,6 +17,7 @@ import LeftonScene from './components/LeftonScene';
 import SingleMovie from './components/SingleMovie';
 import DonationPage from './components/Donations';
 import { setContext } from '@apollo/client/link/context';
+import Reviews from './components/Reviews'
 
 import {
   ApolloClient,
@@ -63,6 +65,7 @@ const App = () => {
             <Route path="/Home" element={<MovieSearch />} />
             <Route path='/MyMovies' element={<MovieList />} />
             <Route path="/Donations" element={<DonationPage />} />
+            <Route path="MyReviews" element ={<Reviews />} />
           </Route>
         </Routes>
       </Router>
