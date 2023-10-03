@@ -4,7 +4,7 @@ import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 
 function DonationPage() {
   const [amount, setAmount] = useState('');
-//   const stripe = useStripe();
+  const stripe = useStripe();
   const elements = useElements();
   const handleAmountChange = (event) => {
     setAmount(event.target.value);

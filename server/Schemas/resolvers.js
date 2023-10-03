@@ -1,7 +1,9 @@
 const { User } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
-const stripe = require('stripe')('sk_test_51NunjlCC8LY2bILLcO8iXXeCPwrXI5ykFj3gb4dhdpFdirQwRZLAQLIquSruejZ4hlou8uacbAf3gVPExwCnGwjY00GgCD2dhp')
+const stripe = require("stripe")(
+  "sk_test_51NunjlCC8LY2bILLcO8iXXeCPwrXI5ykFj3gb4dhdpFdirQwRZLAQLIquSruejZ4hlou8uacbAf3gVPExwCnGwjY00GgCD2dhp"
+);
 
 const resolvers = {
   Query: {
@@ -18,24 +20,27 @@ const resolvers = {
     },
     checkout: async (parent, args, context) => {
       // const url = new URL(context.headers.referer).origin;
-      const url = 'http://localhost/3000/success'
+      const url = "http://localhost/3000/success";
       // save donation to database here ***
       // eslint-disable-next-line camelcase
-      const line_items = [{price_data: {
-        currency: 'usd',
-        product_data: {
-          name: 'Donations',
-          description: 'Donations'
+      const line_items = [
+        {
+          price_data: {
+            currency: "usd",
+            product_data: {
+              name: "Donations",
+              description: "Donations",
+            },
+            unit_amount: args.donationAmount * 100,
+          },
+          quantity: 1,
         },
-        unit_amount: args.donationAmount * 100,
-      },
-      quantity: 1,
-    }];
+      ];
 
       const session = await stripe.checkout.sessions.create({
-        payment_method_types: ['card'],
+        payment_method_types: ["card"],
         line_items,
-        mode: 'payment',
+        mode: "payment",
         success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${url}/`,
       });
@@ -129,7 +134,7 @@ const resolvers = {
           { $pull: { reviews: { comments: { commentId } } } },
           { new: true }
         );
-        return comment
+        return comment;
       }
       throw new AuthenticationError("You need to be logged in.");
     },

@@ -25,7 +25,7 @@ export const ADD_USER = gql`
 `;
 
 export const SAVE_MOVIE = gql`
-  mutation saveMovie($newMovie: SaveMovie) {
+  mutation saveMovie($newMovie: SaveMovie!) {
     saveMovie(newMovie: $newMovie) {
       _id
       username
