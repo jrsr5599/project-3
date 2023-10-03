@@ -12,7 +12,6 @@ function DonationPage() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (!stripe || !elements) {
-
       return;
     }
     const cardElement = elements.getElement(CardElement);

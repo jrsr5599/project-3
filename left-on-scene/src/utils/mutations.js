@@ -72,7 +72,9 @@ export const ADD_REVIEW = gql`
         movieId
         title
         text
-        comments
+        comments {
+          text
+        }
       }
     }
   }
