@@ -69,7 +69,7 @@ export const ADD_REVIEW = gql`
       reviews {
         rating
         movie
-        movieId
+        reviewId
         title
         text
         comments {
@@ -89,10 +89,12 @@ export const REMOVE_REVIEW = gql`
       reviews {
         rating
         movie
-        movieId
+        reviewId
         title
         text
-        comments
+        comments {
+          text
+        }
       }
     }
   }

@@ -20,7 +20,7 @@ const reviewSchema = new Schema({
   movie: {
     type: Object
   },
-  movieId: {
+  reviewId: {
     type: String,
     required: true
   },

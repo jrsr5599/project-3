@@ -94,7 +94,9 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in.");
     },
+
     addReview: async (parent, { newReview }, context) => {
+      console.log("new review", newReview)
       if (context.user) {
         const review = await User.findOneAndUpdate(
           { _id: context.user._id },
@@ -105,6 +107,7 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in.");
     },
+
     removeReview: async (parent, { reviewId }, context) => {
       if (context.user) {
         const review = await User.findOneAndUpdate(
