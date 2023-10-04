@@ -18,7 +18,7 @@ export const GET_ME = gql`
       reviews {
         rating
         movie
-        movieId
+        reviewId
         title
         text
         comments {

@@ -6,7 +6,6 @@ import { GET_ME } from "../utils/queries";
 import FadeIn from "react-fade-in/lib/FadeIn";
 import { Link } from "react-router-dom";
 
-
 const MovieList = () => {
   const { loading, data } = useQuery(GET_ME);
   const [removeMovie, { error }] = useMutation(REMOVE_MOVIE);
@@ -36,16 +35,19 @@ const MovieList = () => {
   }
 
   const containerStyle = {
-	border: "1px solid #ccc",
-	padding: "10px",
-	margin: "10px",
-	display: "inline-block",
-	color: "#ffffff",
-  }
+    border: "1px solid #ccc",
+    padding: "10px",
+    margin: "10px",
+    display: "inline-block",
+    color: "#ffffff",
+  };
 
   return (
     <FadeIn>
       <h1>My Movies</h1>
+      <h2>
+        Your Movies here
+      </h2>
       <div className="container-fluid movie-app">
         <div className="row">
           <div className="col">
@@ -54,7 +56,7 @@ const MovieList = () => {
                 return (
                   <div style={containerStyle} to={`/movie/${movie.movieId}`}>
                     <div key={movie.movieId}>
-						<h1>{movie.title}</h1>
+                      <h1>{movie.title}</h1>
                       {`https://image.tmdb.org/t/p/w500/${movie.image}` ? (
                         <img
                           src={`https://image.tmdb.org/t/p/w500/${movie.image}`}
@@ -62,8 +64,18 @@ const MovieList = () => {
                         />
                       ) : null}
                     </div>
-					<Link to={`/movie/${movie.movieId}`} className="btn btn-primary">Movie Overview</Link>
-					<button className="btn btn-danger" onClick={() => handleDeleteMovie(movie.movieId)}>Delete!</button>
+                    <Link
+                      to={`/movie/${movie.movieId}`}
+                      className="btn btn-primary"
+                    >
+                      Movie Overview
+                    </Link>
+                    <button
+                      className="btn btn-danger"
+                      onClick={() => handleDeleteMovie(movie.movieId)}
+                    >
+                      Delete!
+                    </button>
                   </div>
                 );
               })}

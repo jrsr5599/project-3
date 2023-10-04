@@ -27,7 +27,7 @@ const typeDefs = gql`
   type Reviews {
     rating: Int
     movie: String
-    movieId: String
+    reviewId: String
     title: String
     text: String
     comments: [Comments]
@@ -58,9 +58,10 @@ const typeDefs = gql`
   input AddReview {
     rating: Int
     movie: String
-    movieId: String
+    reviewId: String
     title: String
     text: String
+    comment: [String]
   }
 
   input AddComment {
