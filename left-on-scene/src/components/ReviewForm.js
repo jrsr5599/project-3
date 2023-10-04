@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_REVIEW } from "../utils/mutations";
@@ -10,12 +11,14 @@ const ReviewForm = ({ newMovieData }) => {
 
   const handleReviewInputChange = (e) => {
     const { name, value } = e.target;
+
     setTextArea({ ...textArea, [name]: value });
     setTextArea(e.target.value);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
 
     const reviewText = {
       rating:1,
@@ -25,8 +28,6 @@ const ReviewForm = ({ newMovieData }) => {
       text: textArea,
       comment: ['']
     }
-
-
 
     setNewReview(reviewText)
 
@@ -38,7 +39,9 @@ const ReviewForm = ({ newMovieData }) => {
     } catch (err) {
       console.error(err);
     }
+
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <div className="form-group">
@@ -47,13 +50,17 @@ const ReviewForm = ({ newMovieData }) => {
           className="form-control"
           id="reviewText"
           rows="3"
+
           value={textArea.text}
+
           onChange={handleReviewInputChange}
+          required
         />
       </div>
       <button type="submit" className="btn btn-primary">
         Submit Review
       </button>
+
     </form>
   );
 };

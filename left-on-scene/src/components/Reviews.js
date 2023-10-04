@@ -1,9 +1,11 @@
+
 import React from "react";
 import { useQuery, useMutation } from "@apollo/client";
 import { GET_ME } from "../utils/queries";
 import { REMOVE_REVIEW } from "../utils/mutations";
 import Auth from "../utils/auth";
 import FadeIn from "react-fade-in/lib/FadeIn";
+
 
 const Reviews = () => {
   const { loading, data } = useQuery(GET_ME);
@@ -14,6 +16,7 @@ const Reviews = () => {
   const handleRemoveReview = async (reviewId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
+
     if (!token) {
       return false;
     }
@@ -21,6 +24,8 @@ const Reviews = () => {
     try {
       const response = await removeReview({
         variables: { reviewId },
+
+
       });
       console.log("Review deleted: ", response);
 

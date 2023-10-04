@@ -5,7 +5,10 @@ import ReviewForm from "../components/ReviewForm";
 import { useMutation, useQuery } from "@apollo/client";
 import { SAVE_MOVIE } from "../utils/mutations";
 import Auth from "../utils/auth";
+
 import { GET_ME } from "../utils/queries";
+
+
 
 const key = "15a6559706f656f8eadc5e7642675b96";
 let globalMovie = {}
@@ -104,6 +107,7 @@ const SingleMovie = () => {
       image: movie.poster_path,
     };
 
+
     setNewMovie(newMovie);
 
     console.log("external api", saveNewMovie);
@@ -173,6 +177,7 @@ const SingleMovie = () => {
                 />
               </div>
               <div className="mt-4">
+
                 {Auth.loggedIn() ? (
                   <>
                     <button
